@@ -2,46 +2,55 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Introdução ao Projeto
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Este projeto é um sistema web de **gestão escolar**, desenvolvido para facilitar o controle e organização de dados acadêmicos, como professores, disciplinas, cursos, turmas e ambientes físicos da instituição. Seu objetivo é fornecer uma ferramenta para o gerenciamento das informações, permitindo que administradores escolares possam cadastrar, consultar, editar e excluir registros com facilidade.
 
-## Getting Started
+A aplicação é dividida em duas camadas:
 
-Get started by **creating a new site**.
+- **Back-end:** Responsável pela lógica, armazenando dados que conecta todas as coisas.
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+- **Front-end:** Interface interativa para o usuário final, focada em usabilidade e eficiência.
 
-### What you'll need
+A estrutura permite que cada parte tenha seus próprios componentes, facilitando tanto o desenvolvimento quanto a manutenção.
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+---
 
-## Generate a new site
+## Estrutura do Projeto
 
-Generate a new Docusaurus site using the **classic template**.
+### Back-end
 
-The classic template will automatically be added to your project after you run the command:
+O back-end foi desenvolvido com Django e organiza as funcionalidades em:
 
-```bash
-npm init docusaurus@latest my-website classic
-```
+- **Serializer** - Responsável pela conversação de dados entre os formatos utilizados na API e os modelos Django.
+- **Models** - Define a estrutura e os relacionamentos dos dados no banco de dados (como `Cadastro`, `Disciplina`, `Ambiente`, `Curso` e `Turma`).
+- **URL** - Mapeamento de rotas que conectam os endpoints às views.
+- **Views** - Contêm a lógica que responde às requisições HTTP (GET, POST, PUT, DELETE).
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+> Acesse a seção [BACK](../back/overview) para ver os detalhes de cada parte.
 
-The command also installs all necessary dependencies you need to run Docusaurus.
+### 🎨 Front-end
 
-## Start your site
+A interface foi construída com React, garantindo uma navegação fluida e responsiva. Os principais componentes são:
 
-Run the development server:
+- **Head/Footer** – Componentes fixos da estrutura visual.
+- **Modal** – Janelas modais reutilizáveis para formulários e interações rápidas.
+- **App/Login/Home/Main** – Componentes principais da aplicação, incluindo login e a tela principal de gerenciamento.
 
-```bash
-cd my-website
-npm run start
-```
+A tela **Home**, por exemplo, permite buscar, cadastrar, editar e excluir professores de maneira integrada com a API.
 
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
+> Veja mais detalhes em [FRONT](../front/overview).
 
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
+---
 
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+## 🚀 Começando
+
+Se é sua primeira vez por aqui, o ideal é seguir as seções de **Back-end** e **Front-end** para entender como cada parte foi implementada. Você também pode clonar o repositório e rodar o projeto localmente para testá-lo em tempo real.
+
+---
+
+## 📚 Sobre esta Documentação
+
+Esta documentação foi construída com [Docusaurus](https://docusaurus.io/), uma ferramenta moderna de documentação voltada para projetos técnicos.
+
+Fique à vontade para contribuir com melhorias, apontar erros ou sugerir novos conteúdos!

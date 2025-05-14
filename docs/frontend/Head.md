@@ -4,52 +4,59 @@ sidebar_position: 1
 
 # Head
 
-Docusaurus can manage multiple versions of your docs.
+Página Head Uma página React representa uma tela ou seção específica dentro de uma aplicação. Ela define o layout e o conteúdo que serão exibidos no navegador, utilizando HTML em combinação com JSX.
 
-## Create a docs version
-
-Release a version 1.0 of your project:
+## Importações 
 
 ```bash
-npm run docusaurus docs:version 1.0
+
+import React from "react";
+import './styles.css';
+import { Link } from "react-router-dom";
+
 ```
 
-The `docs` folder is copied into `versioned_docs/version-1.0` and `versions.json` is created.
+Import React from "react":  `Importa` o React para permitir a criação de páginas.
 
-Your docs now have 2 versions:
+Import './styles.css': `Importa` os estilos que serão aplicados à página.
 
-- `1.0` at `http://localhost:3000/docs/` for the version 1.0 docs
-- `current` at `http://localhost:3000/docs/next/` for the **upcoming, unreleased docs**
+Import "Link"  from "react-router-dom": `Importa` componente Link, útil para criar links de navegação (embora não utilizado diretamente nesta página).
 
-## Add a Version Dropdown
 
-To navigate seamlessly across versions, add a version dropdown.
+## Definição do componente 
 
-Modify the `docusaurus.config.js` file:
+A função Head é exportada como padrão e retorna a estrutura do componente.
 
-```js title="docusaurus.config.js"
-export default {
-  themeConfig: {
-    navbar: {
-      items: [
-        // highlight-start
-        {
-          type: 'docsVersionDropdown',
-        },
-        // highlight-end
-      ],
-    },
-  },
-};
+```js title="Javascript"
+export default function Head() {
+    return (
+        <main className="main">
+            <div className="container_head">
+                <div className="title">
+                    <h2>Professores</h2>
+                </div>
+                <div className="nav">
+                    
+                    <span>Read</span>
+                    <span>Update</span>
+                    <span>Delete</span>
+                </div>
+            </div>
+        </main>
+    )
+}
 ```
 
-The docs version dropdown appears in your navbar:
+Estrutura do componente:
+- `<main>:` Um elemento HTML com a classe CSS main. Serve como o contêiner principal.
 
-![Docs Version Dropdown](./img/docsVersionDropdown.png)
+- `<div className="container_head">:` Um contêiner que organiza o conteúdo principal do componente.
 
-## Update an existing version
+- `<div className="title">:` Contém o cabeçalho h2 com o texto "Professores".
 
-It is possible to edit versioned docs in their respective folder:
+- `<div className="nav">:` Contém três elementos span com os textos: "Read", "Update" e "Delete", representando possíveis ações.
 
-- `versioned_docs/version-1.0/hello.md` updates `http://localhost:3000/docs/hello`
-- `docs/hello.md` updates `http://localhost:3000/docs/next/hello`
+
+## Finalidade
+
+Este componente cria uma estrutura simples de interface com título ("Professores") e opções de ação (Read, Update, Delete). 
